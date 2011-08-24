@@ -1,0 +1,17 @@
++ = finished
+* = working on
+- = Idea/more to come
+
++Powerups
++Spawning the powerup somewhere in the map
++Creating a bigger/better map
++Powerup that allows you to walk through walls
++"The Pusher"
+-Weapon that removes a players PowerUps
+-Allow players to get on walls without ruining gameplay.
++Damage players that are stuck in walls
++Custom particle effects for powerups!
++PP effects for various powerups
++Fix the ANNOYING WHITE OUTLINE AROUND PARTICLE EFFECTS (Found out how to fix it, tell tboy to apply the same thing to the rest)
++Make it so that you can only have one powerup at a time
+

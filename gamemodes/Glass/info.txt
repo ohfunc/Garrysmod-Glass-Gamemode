@@ -1,0 +1,25 @@
+"Gamemode"
+{
+	"name"		"Glass"
+	"version"	"1"
+
+	"author_name"	"Bellminator"
+	"author_email"	""
+	"author_url"	""
+	
+	"icon"		""
+	"info"		""
+	"hide"		"0"
+
+	"fretta_maps"
+	{
+		"1"	"^gl_"
+	}
+	"mappattern"
+	{
+		"1"	"^gl_"
+	}
+
+	"selectable"	"1"
+	"description"	"A fall to your death last man standing palooza!"
+}

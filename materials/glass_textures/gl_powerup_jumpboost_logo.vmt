@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	"$basetexture" "glass_textures/gl_powerup_jumpboost_logo"
+	"$translucent" 1
+	"$vertexcolor" 1
+}

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/garrysmod/!svn/ver/918/trunk/garrysmod/gamemodes/bombtag/gamemode/player_class
+END
+class_bomber.lua
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/garrysmod/!svn/ver/918/trunk/garrysmod/gamemodes/bombtag/gamemode/player_class/class_bomber.lua
+END
+class_human.lua
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/garrysmod/!svn/ver/907/trunk/garrysmod/gamemodes/bombtag/gamemode/player_class/class_human.lua
+END

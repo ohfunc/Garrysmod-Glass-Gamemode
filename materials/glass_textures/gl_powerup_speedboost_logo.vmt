@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	"$basetexture" "glass_textures/gl_powerup_speedboost_logo"
+	"$vertexcolor" 1
+	"$vertexalpha" 1
+}
