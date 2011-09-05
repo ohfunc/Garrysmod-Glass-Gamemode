@@ -1,0 +1,11 @@
+"AddonInfo"
+{
+	"name"		"Golden Forge"
+	"version"	"1.0"
+	"up_date"	""
+	"author_name"	"Chewgum"
+	"author_email"	""
+	"author_url"	""
+	
+	"info"		"A hat/trail store addon."
+}
