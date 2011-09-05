@@ -2,6 +2,7 @@
 resource.AddFile("particles/gl_powerup_particles.pcf")
 resource.AddFile("settings/render_targets/L4D1.txt")
 resource.AddFile("settings/render_targets/L4D2.txt")
+AddCSLuaFile("../client/cl_glow.lua")
 
 function AddDir(dir) // recursively adds everything in a directory to be downloaded by client
 	local list = file.FindDir("../"..dir.."/*")
