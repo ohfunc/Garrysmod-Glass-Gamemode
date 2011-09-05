@@ -72,7 +72,6 @@ end
    
 function SWEP:PrimaryAttack() 
     self.Weapon:EmitSound (ShootSound2);
-	self.Owner:DrawViewModel(true)
 	//self.Weapon:SetNextPrimaryFire( CurTime() + 5 )
 	self.Owner:DrawViewModel(false)
 	self:throw_attack() 

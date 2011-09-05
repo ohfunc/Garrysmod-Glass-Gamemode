@@ -2,7 +2,7 @@
 AddCSLuaFile( "cl_init.lua" )
 AddCSLuaFile( "shared.lua" )
 AddCSLuaFile( "cl_hud.lua" )
-AddCSLuaFile( "cl_glow.lua" )
+--AddCSLuaFile( "cl_glow.lua" )
 
 include( "tables.lua" )
 include( "shared.lua" )
@@ -64,6 +64,7 @@ function GM:OnRoundWinner( ply, resulttext )
 		if timer.IsTimer("PhaseTimer") then timer.Destroy("PhaseTimer") end
 
 		v:SetNWBool( "powerup_used", false )
+		v:SetNWInt( "Powerup", 0 )
 
 		Phase = 0
 		Nickname = nil
@@ -126,4 +127,5 @@ function GM:DoPlayerDeath( ply, attacker, dmginfo )
 	ply:AddDeaths( 1 )
 
 	ply:SetNWBool( "powerup_used", false )
+	ply:SetNWInt( "Powerup", 0 )
 end
