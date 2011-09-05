@@ -1,6 +1,6 @@
 include( 'shared.lua' )
 include( 'cl_hud.lua' )
-include( 'cl_pp.lua' )
+include( 'cl_glow.lua' )
 
 function GM:HUDShouldDraw( name )
 

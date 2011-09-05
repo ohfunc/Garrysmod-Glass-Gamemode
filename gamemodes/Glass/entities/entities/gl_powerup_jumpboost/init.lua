@@ -31,15 +31,11 @@ end
 function ENT:Touch( ent )
 	if( IsEntity( ent ) and ent:IsPlayer( ) and !ent:GetNWBool( "powerup_used" ) ) then
 			ent:SetNWBool( "powerup_used", true )
-			umsg.Start( "CreativeNamingSkills", ent )
-				umsg.String( "jumpboost" )
-				umsg.Bool( true ) 
-			umsg.End()
+			ent:SetNWInt( "Powerup", 2 )
 
 			ent:SetJumpPower( 275 )
 			timer.Create( "JumpTimer", 30, 1, RemovePlayerJump, ent )
 			ent:EmitSound("ambient/machines/teleport3.wav", 500, 100)
-			
 			self:Remove()
 	end
 end
@@ -47,12 +43,8 @@ end
 function RemovePlayerJump( ent )
 	if( IsEntity( ent ) and ent:IsPlayer( ) ) then
 		ent:SetNWBool( "powerup_used", false )
-		umsg.Start( "CreativeNamingSkills", ent )
-			umsg.String( "none" )
-			umsg.Bool( false )
-		umsg.End()
-
-		ent:StopParticles()
+		ent:SetNWInt( "Powerup", 0 )
+		
 		ent:SetJumpPower( 200 )
 		ent:EmitSound("ambient/levels/labs/teleport_postblast_winddown1.wav", 400, 200)
 	end

@@ -31,12 +31,7 @@ end
 function ENT:Touch( ent )
 	if( IsEntity( ent ) and ent:IsPlayer( ) and !ent:GetNWBool( "powerup_used" ) ) then
 			ent:SetNWBool( "powerup_used", true)
-			umsg.Start( "CreativeNamingSkills", ent )
-				umsg.String( "speedboost" )
-				umsg.Bool( true )
-			umsg.End()
-
-			self:StopParticles()
+			ent:SetNWInt( "Powerup", 1 )
 
 			ent:SetWalkSpeed( 300 )
 			ent:SetRunSpeed( 400 )
@@ -50,10 +45,7 @@ end
 function RemovePlayerBoost( ent )
 	if( IsEntity( ent ) and ent:IsPlayer( ) ) then
 		ent:SetNWBool( "powerup_used", false )
-		umsg.Start( "CreativeNamingSkills", ent )
-			umsg.String( "none" )
-			umsg.Bool( false )
-		umsg.End()
+		ent:SetNWInt( "Powerup", 0 )
 
 		ent:SetWalkSpeed(200)
 		ent:SetRunSpeed(300)

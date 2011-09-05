@@ -2,7 +2,7 @@
 AddCSLuaFile( "cl_init.lua" )
 AddCSLuaFile( "shared.lua" )
 AddCSLuaFile( "cl_hud.lua" )
-AddCSLuaFile( "cl_pp.lua")
+AddCSLuaFile( "cl_glow.lua" )
 
 include( "tables.lua" )
 include( "shared.lua" )
@@ -37,16 +37,10 @@ function GM:CheckRoundEnd()
 	end
 	
 	--Check to see if everyone has died
-	if( #GAMEMODE:AlivePlayers( TEAM_ALIVE ) == 0 and #GAMEMODE:ActivePlayers() > 1 ) then
+	if( #GAMEMODE:AlivePlayers( TEAM_ALIVE ) == 0 and #GAMEMODE:ActivePlayers() > 0 ) then
 		local ply = nil
 		GAMEMODE:RoundEndWithResult( ply )
 		GAMEMODE.LastWinner = ply
-	end
-	
-	--If everyone died before the gamemode could recognize a winner we just reset the round automatically.
-	if( #GAMEMODE:AlivePlayers( TEAM_ALIVE ) == 0 and #GAMEMODE:ActivePlayers() > 1 ) then
-		local ply = nil
-		GAMEMODE:RoundEndWithResult( ply )
 	end
 end
 
@@ -54,12 +48,8 @@ end
 function GM:OnRoundWinner( ply, resulttext )
 	if(ply != nil) then
 		ply:AddFrags( 1 )
+		ply:GiveScrapMetal(100,"Congrats! You have gained 100 pieces of scrap metal. (Press F4 to access the store)")
 	end
-
-	umsg.Start( "CreativeNamingSkills" )
-		umsg.String( "none" )
-		umsg.Bool( false )
-	umsg.End()
 
 	--Reset powerups
 	for k,v in pairs( player.GetAll() ) do
@@ -69,6 +59,7 @@ function GM:OnRoundWinner( ply, resulttext )
 
 		if timer.IsTimer("SpeedBoostTimer") then timer.Destroy("SpeedBoostTimer") end
 		if timer.IsTimer("CloakTimer") then timer.Destroy("CloakTimer") end
+			hook.Remove("Think","CheckWeaponVisibility")
 		if timer.IsTimer("JumpTimer") then timer.Destroy("JumpTimer") end
 		if timer.IsTimer("PhaseTimer") then timer.Destroy("PhaseTimer") end
 
@@ -79,7 +70,7 @@ function GM:OnRoundWinner( ply, resulttext )
 	end
 	
 	for k,v in pairs( GAMEMODE:ActivePlayers() ) do
-		if not v:Alive() or v:Team() == TEAM_DEAD then
+		if not v:Alive() then
 			v:SetTeam( TEAM_ALIVE )
 		end
 		game.CleanUpMap()
@@ -135,8 +126,4 @@ function GM:DoPlayerDeath( ply, attacker, dmginfo )
 	ply:AddDeaths( 1 )
 
 	ply:SetNWBool( "powerup_used", false )
-	umsg.Start( "CreativeNamingSkills", ply )
-		umsg.String( "none" )
-		umsg.Bool( false )
-	umsg.End()
 end

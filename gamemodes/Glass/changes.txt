@@ -14,4 +14,5 @@
 +PP effects for various powerups
 +Fix the ANNOYING WHITE OUTLINE AROUND PARTICLE EFFECTS (Found out how to fix it, tell tboy to apply the same thing to the rest)
 +Make it so that you can only have one powerup at a time
-
+-Possibly the currently used powerup icon on the players screen for justification? (Plus a timer to state how long that powerup will be active.)
++Make players GLOW rather than using PP effects

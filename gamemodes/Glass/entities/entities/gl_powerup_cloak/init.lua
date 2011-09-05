@@ -34,11 +34,6 @@ function ENT:Touch( ent )
 		Player = ent
 
 		ent:SetNWBool( "powerup_used", true )
-		umsg.Start( "CreativeNamingSkills", ent )
-			umsg.String( "cloak" )
-			umsg.Bool( true ) 
-		umsg.End()
-
 		ent:SetColor( 255, 255, 255, 0 )
 
 		timer.Create("CloakTimer", 30, 1, RemovePlayerCloak, ent)
@@ -52,17 +47,10 @@ function RemovePlayerCloak( ent )
 	if(IsEntity( ent ) and ent:IsPlayer( ) ) then
 		Cloak = 0
 
-		ent:DrawWorldModel(true) 
-		ent:DrawViewModel(true) 
-
+		ent:DrawWorldModel(true)
+		ent:DrawViewModel(true)
 		ent:SetNWBool( "powerup_used", false )
-		umsg.Start( "CreativeNamingSkills", ent )
-				umsg.String( "none" )
-				umsg.Bool( false )
-		umsg.End()
-
 		ent:SetColor( 255, 255, 255, 255 )
-
 		ent:EmitSound("ambient/levels/labs/teleport_postblast_winddown1.wav", 400, 200)
 	end
 end
@@ -70,7 +58,7 @@ end
 function CheckWeaponVisibility()
 	if(Cloak==1) then
 		Player:DrawWorldModel(false) 
-		Player:DrawViewModel(false) 
+		Player:DrawViewModel(false)
 	end
 end
 hook.Add( "Think", "CheckWeaponVisibility", CheckWeaponVisibility)

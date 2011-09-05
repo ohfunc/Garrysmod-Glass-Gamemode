@@ -43,10 +43,7 @@ hook.Add("ShouldCollide", "Phase", phaseShouldCollide)
 function ENT:Touch( ent )
 	if( IsEntity( ent ) and ent:IsPlayer( )  and !ent:GetNWBool( "powerup_used" ) ) then
 		ent:SetNWBool( "powerup_used", true )
-		umsg.Start( "CreativeNamingSkills", ent )
-			umsg.String( "phaser" )
-			umsg.Bool( true ) 
-		umsg.End()
+		ent:SetNWInt( "Powerup", 3 )
 
 		Nickname = ent:Nick()
 	
@@ -62,11 +59,7 @@ end
 function RemovePhase( ent )
 	if( IsEntity( ent ) and ent:IsPlayer( ) ) then
 		ent:SetNWBool( "powerup_used", false )
-
-		umsg.Start( "CreativeNamingSkills", ent )
-			umsg.String( "none" )
-			umsg.Bool( false )
-		umsg.End()
+		ent:SetNWInt( "Powerup", 0 )
 
 		Phase = 0
 		Nickname = nil
