@@ -25,8 +25,6 @@ SWEP.Primary.Ammo = "none";
 local ShootSound2 = Sound ("weapons/iceaxe/iceaxe_swing1.wav");
  
 function SWEP:Deploy()
-	self.Owner:DrawViewModel(false)
-	self.Owner:DrawWorldModel(false)
 end 
 
   

@@ -2,7 +2,6 @@
 AddCSLuaFile( "cl_init.lua" )
 AddCSLuaFile( "shared.lua" )
 AddCSLuaFile( "cl_hud.lua" )
---AddCSLuaFile( "cl_glow.lua" )
 
 include( "tables.lua" )
 include( "shared.lua" )

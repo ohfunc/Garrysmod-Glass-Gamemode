@@ -1,6 +1,6 @@
-"L4D1"
+"l4d1"
 {
-		"Name"        "L4D1"
+		"Name"        "l4d1"
 		 "Width"        "512"
 		 "Height"    "512"
 }

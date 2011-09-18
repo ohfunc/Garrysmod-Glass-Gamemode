@@ -16,3 +16,4 @@
 +Make it so that you can only have one powerup at a time
 -Possibly the currently used powerup icon on the players screen for justification? (Plus a timer to state how long that powerup will be active.)
 +Make players GLOW rather than using PP effects
+-randomize player spawnpoints
